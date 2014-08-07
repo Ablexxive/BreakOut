@@ -47,4 +47,11 @@ public class Brick extends GRect {
 	public void setPoints(int x){
 		POINTS = x;
 	}
+	
+	/** To String method
+	 * @return String
+	 */
+	public String toString(){
+		return "Brick X: +"+getX()+" Y: "+getY()+" HP: "+HP+" Points: "+POINTS;
+	}
 }

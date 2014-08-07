@@ -2,17 +2,12 @@ import acm.graphics.*;
 import java.awt.*;
 
 public class Ball extends GOval {
-	/** Points for cardinal edges of the ball. These calculations are only at initlization*/
-	private GPoint leftEdge = new GPoint(getX(), getY()+getHeight()/2);
-	private GPoint rightEdge = new GPoint(getX()+getWidth(), getY()+getHeight()/2);
-	private GPoint topEdge = new GPoint(getX()+getWidth()/2, getY());
-	private GPoint bottomEdge = new GPoint(getX()+getWidth()/2, getY()+getHeight());
 	/** Attack power of ball*/
 	private int ATK = 1; 
 	/** Boolean for ball in motion*/
 	private boolean ballInMotion = false;
 	/** Movement in X (DX) and Y (DY) directions
-	 * */
+	 */
 	private double DX = 0;
 	private double DY = 0;
 	private double SPEED_VALUE = 0.75;
@@ -24,16 +19,20 @@ public class Ball extends GOval {
 	}
 	/** Getter methods for edges. You want to recalculate here to update values.*/
 	public GPoint getLeftEdge(){
-		return leftEdge = new GPoint(getX(), getY()+getHeight()/2);
+		GPoint leftEdge = new GPoint(getX(), getY()+getHeight()/2);
+		return leftEdge;
 	}
 	public GPoint getRightEdge(){
-		return rightEdge = new GPoint(getX()+getWidth(), getY()+getHeight()/2);
+		GPoint rightEdge = new GPoint(getX()+getWidth(), getY()+getHeight()/2);
+		return rightEdge;
 	}
 	public GPoint getTopEdge(){
-		return topEdge = new GPoint(getX()+getWidth()/2, getY());
+		GPoint topEdge = new GPoint(getX()+getWidth()/2, getY());
+		return topEdge;
 	}
 	public GPoint getBottomEdge(){
-		return bottomEdge  = new GPoint(getX()+getWidth()/2, getY()+getHeight());
+		GPoint bottomEdge  = new GPoint(getX()+getWidth()/2, getY()+getHeight());
+		return bottomEdge;
 	}
 	/** Returns array of all 4 edges*/
 	public GPoint[] getAllEdges(){
@@ -78,5 +77,8 @@ public class Ball extends GOval {
 	}
 	public double getDY(){
 		return DY;
+	}
+	public String toString(){
+		return "Ball Power: "+ATK+" Ball Motion: "+ballInMotion;
 	}
 }
